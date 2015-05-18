@@ -28,7 +28,7 @@ public class DaoFuncionario {
     
     
     public void cadastroDeFuncionario( Funcionario funcionario) throws SQLException{
-        String sql = "INSERT INTO FUNCIONARIO (CPF, NOME, TELEFONE,GENERO, SALARIO, HORARIO, FUNCAO ) VALUES (?,?,?,?,?,?,?,?)"; // aqui teremos a query de inserção no banco de dados
+        String sql = "INSERT INTO FUNCIONARIO (CPF, NOME, TELEFONE,GENERO, SALARIO, HORARIO, FUNCAO, SENHA ) VALUES (?,?,?,?,?,?,?,?,?)"; // aqui teremos a query de inserção no banco de dados
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
                 psmt.setString(1, funcionario.getCpf());
                 psmt.setString(2, funcionario.getNome());
@@ -37,6 +37,7 @@ public class DaoFuncionario {
                 psmt.setDouble(5, funcionario.getSalario());
                 psmt.setDouble(6, funcionario.getHorario());
                 psmt.setString(7, funcionario.getFuncao());
+                psmt.setString(8, funcionario.getSenha());
                 DaoEndereco end = new DaoEndereco();
                 end.cadastroDeEndereco (funcionario.getEndereco());
                 
@@ -53,7 +54,7 @@ public class DaoFuncionario {
        
    }
    public void atualizarFuncionario(Funcionario funcionario, String cpf) throws SQLException{
-       String sql = " UPDATE FUNCIONARIO SET CPF = ?, NOME = ?, TELEFONE = ?, GENERO = ?, SALARIO = ?, HORARIO = ?, FUNCAO = ? WHERE COD LIKE ?";
+       String sql = " UPDATE FUNCIONARIO SET CPF = ?, NOME = ?, TELEFONE = ?, GENERO = ?, SALARIO = ?, HORARIO = ?, FUNCAO = ?, SENHA = ? WHERE COD LIKE ?";
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
                 psmt.setString(1, funcionario.getCpf());
                 psmt.setString(2, funcionario.getNome());
@@ -62,8 +63,9 @@ public class DaoFuncionario {
                 psmt.setDouble(5, funcionario.getSalario());
                 psmt.setDouble(6, funcionario.getHorario());
                 psmt.setString(7, funcionario.getFuncao());
+                psmt.setString(8, funcionario.getSenha());
                
-               psmt.setString(8, cpf);
+               psmt.setString(9, cpf);
                
                psmt.execute();
             } 

@@ -16,6 +16,15 @@ public class Pessoa {
     private String telefone;
     private String cpf;
     private String genero;
+    private String senha;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public String getGenero() {
         return genero;

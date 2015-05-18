@@ -27,12 +27,13 @@ public class DaoCliente {
     
     
             public void cadastroDeCliente( Cliente cliente) throws SQLException{
-        String sql = "INSERT INTO CLIENTE (CPF, NOME, TELEFONE, GENERO) VALUES (?,?,?,?)"; // aqui teremos a query de inserção no banco de dados
+        String sql = "INSERT INTO CLIENTE (CPF, NOME, TELEFONE, GENERO, SENHA) VALUES (?,?,?,?,?)"; // aqui teremos a query de inserção no banco de dados
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
                 psmt.setString(2, cliente.getCpf());
                 psmt.setString(1, cliente.getNome());                
                 psmt.setString(3, cliente.getTelefone());
                 psmt.setString(4, cliente.getGenero());
+                psmt.setString(5, cliente.getSenha());
                 DaoEndereco end = new DaoEndereco();
                 end.cadastroDeEndereco (cliente.getEndereco());
                 DaoAnimal a = new DaoAnimal();
@@ -51,14 +52,15 @@ public class DaoCliente {
        
    }
    public void atualizarCliente(Cliente cliente, int cpf) throws SQLException{
-       String sql = " UPDATE CLIENTE SET CPF = ?,NOME = ?, TELEFONE = ?, GENERO = ? WHERE COD LIKE ?";
+       String sql = " UPDATE CLIENTE SET CPF = ?,NOME = ?, TELEFONE = ?, GENERO = ?, SENHA = ? WHERE COD LIKE ?";
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
                 psmt.setString(1, cliente.getCpf());
                 psmt.setString(2, cliente.getNome());                
                 psmt.setString(3, cliente.getTelefone());
                 psmt.setString(4, cliente.getGenero());
+                psmt.setString(5, cliente.getSenha());
                
-               psmt.setString(5, cliente.getCpf());
+               psmt.setString(6, cliente.getCpf());
                
                psmt.execute();
             } 
