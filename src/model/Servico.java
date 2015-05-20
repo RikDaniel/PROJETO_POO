@@ -38,6 +38,10 @@ public class Servico {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
+    public Ficha getFicha() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

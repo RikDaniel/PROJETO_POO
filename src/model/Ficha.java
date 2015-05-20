@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Mayana
  */
-class Ficha {
+public class Ficha {
     private int id_ficha;
     private Date agendamento;
     private String diagnostico;
@@ -23,7 +23,6 @@ class Ficha {
     public void setId_ficha(int id_ficha) {
         this.id_ficha = id_ficha;
     }
-
 
     public Date getAgendamento() {
         return agendamento;
@@ -39,6 +38,14 @@ class Ficha {
 
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
+    }
+
+    public Cliente getCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Animal getAnimal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

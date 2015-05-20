@@ -6,12 +6,14 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Ficha;
+
 
 /**
  *
@@ -27,8 +29,8 @@ public class DaoFicha {
                 public void cadastroDeFicha( Ficha ficha) throws SQLException{
         String sql = "INSERT INTO FICHA (ID_FICHA, AGENDAMENTO, DIAGNOSTICO) VALUES (?,?,?)"; // aqui teremos a query de inserção no banco de dados
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
-                psmt.SetInt(1, ficha.getId_ficha());
-                psmt.setString(2, ficha.getAgendamento());
+                psmt.setInt(1, ficha.getId_ficha());
+                psmt.setDate(2, (Date) ficha.getAgendamento());
                 psmt.setString(3, ficha.getDiagnostico());                
                 DaoCliente fic = new DaoCliente();
                 fic.cadastroDeCliente (ficha.getCliente());
@@ -42,7 +44,7 @@ public class DaoFicha {
    public void removerFicha(Ficha ficha) throws SQLException{
        String sql = "DELETE FROM FICHA WHERE  ID_FICHA LIKE ?";
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
-                psmt.setString(1, ficha.getId_ficha());
+                psmt.setInt(1, ficha.getId_ficha());
                 psmt.execute();
             }
        
@@ -51,7 +53,7 @@ public class DaoFicha {
        String sql = " UPDATE FICHA SET ID_FICHA = ?, AGENDAMENTO = ?, DIAGNOSTICO = ? WHERE COD LIKE ?";
             try (PreparedStatement psmt = this.conexao.prepareStatement(sql)) {
                 psmt.setInt(1, ficha.getId_ficha());
-                psmt.setString(2, ficha.getAgendamento());                
+                psmt.setDate(2, (Date) ficha.getAgendamento());                
                 psmt.setString(3, ficha.getDiagnostico());
                
                psmt.setInt(4, ficha.getId_ficha());
@@ -71,7 +73,7 @@ public class DaoFicha {
                    Ficha listaFicha = new Ficha();
                    
                    listaFicha.setId_ficha(rs.getInt("ID_FICHA"));
-                   listaFicha.setAgendamento(rs.getString("AGENDAMENTO"));                   
+                   listaFicha.setAgendamento(rs.getDate("AGENDAMENTO"));                   
                    listaFicha.setDiagnostico(rs.getString("DIAGNOSTICO"));
                    listaDao.add(listaFicha);
                }
