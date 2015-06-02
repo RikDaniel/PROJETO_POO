@@ -5,13 +5,16 @@
  */
 package model;
 
+import java.util.GregorianCalendar;
+import sun.util.calendar.LocalGregorianCalendar.Date;
+
 /**
  *
  * @author Mayana
  */
 public class Funcionario extends Pessoa{
     private double salario;
-    private double horario;
+    private java.sql.Date horario;
     private String funcao;
 
     public double getSalario() {
@@ -22,11 +25,12 @@ public class Funcionario extends Pessoa{
         this.salario = salario;
     }
 
-    public double getHorario() {
+    public java.sql.Date getHorario() {
+        
         return horario;
     }
 
-    public void setHorario(double horario) {
+    public void setHorario(java.sql.Date horario ) {
         this.horario = horario;
     }
 
@@ -36,6 +40,10 @@ public class Funcionario extends Pessoa{
 
     public void setFuncao(String funcao) {
         this.funcao = funcao;
+    }
+
+    public void setHorario(java.util.Date h) {
+        
     }
     
 }

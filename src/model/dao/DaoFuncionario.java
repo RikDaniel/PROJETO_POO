@@ -35,7 +35,7 @@ public class DaoFuncionario {
                 psmt.setString(3, funcionario.getTelefone());
                 psmt.setString(4, funcionario.getGenero());
                 psmt.setDouble(5, funcionario.getSalario());
-                psmt.setDouble(6, funcionario.getHorario());
+                psmt.setDate(6, funcionario.getHorario());
                 psmt.setString(7, funcionario.getFuncao());
                 psmt.setString(8, funcionario.getSenha());
                 DaoEndereco end = new DaoEndereco();
@@ -61,7 +61,7 @@ public class DaoFuncionario {
                 psmt.setString(3, funcionario.getTelefone());
                 psmt.setString(4, funcionario.getGenero());
                 psmt.setDouble(5, funcionario.getSalario());
-                psmt.setDouble(6, funcionario.getHorario());
+                psmt.setDate(6, funcionario.getHorario());
                 psmt.setString(7, funcionario.getFuncao());
                 psmt.setString(8, funcionario.getSenha());
                
@@ -86,7 +86,7 @@ public class DaoFuncionario {
                    listaFuncionario.setTelefone(rs.getString("TELEFONE"));
                    listaFuncionario.setGenero(rs.getString("GENERO"));
                    listaFuncionario.setSalario(rs.getDouble("SALARIO"));
-                   listaFuncionario.setHorario(rs.getDouble("HORARIO"));
+                   listaFuncionario.setHorario(rs.getDate("HORARIO"));
                    listaFuncionario.setFuncao(rs.getString("FUNCAO"));
                    
                    listaDao.add(listaFuncionario);

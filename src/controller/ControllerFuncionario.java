@@ -42,12 +42,13 @@ public class ControllerFuncionario {
 		 if (func.getFuncao().equals("")){
 			 erro++;
 		 }
-		 if (func.getHorario()== 0){
+		 if (func.getHorario()== null){
 			 erro++;
 		 }
-		 if (func.getSalario() == 0){
+		 if (func.getSalario() <= 788){
 			 erro++;
                  }
+                 
                  if (func.getTelefone() .equals("")){
                          erro++;
                  }
@@ -80,6 +81,9 @@ public class ControllerFuncionario {
                     DaoFuncionario fun = new DaoFuncionario();
                     fun.cadastroDeFuncionario(funcionario);
 }
+                public void controSalario(Funcionario f){
+                     // f.getSalario();
+                }
         
         }
 
