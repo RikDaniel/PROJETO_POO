@@ -43,7 +43,7 @@
 	</head>
 	
 	<body bgcolor=#ccffff oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
-	<div id="cpainel"> <img src="sw4.bmp"> PooPet </div>
+	<div id="cpainel"> <img src="http://s1.postimg.org/cl8smigmj/sw4.jpg"> PooPet </div>
 	<div id="area-admin">
 			<form name="login" method="POST" action="ficha.php">
 			<div align="center">Usuário: <div align="center"><input name="login" type="text" id="login"></div></div>
