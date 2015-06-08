@@ -1,0 +1,16 @@
+1-INSTALAR [e deixar executando] XAMPP COM SERVIDOR MYSQL E APACHE;
+
+2-instalar mysql_gui_tolls;
+
+3-abrir o mysql admin;
+
+4-dar restore no arquivo: "MySqlBKP poo_pet.sql"
+
+5-COLOCAR A PASTA poo_pet em "C:/xampp/htdocs/";
+
+6-configurar o arquivo "poo_pet/conexao.php" com as informações do 
+
+bd
+
+7- acessar no navegador: "localhost/poo_pet"
+
