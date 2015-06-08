@@ -83,7 +83,7 @@ public class ControllerFuncionario {
                     DaoFuncionario fun = new DaoFuncionario();
                     fun.cadastroDeFuncionario(funcionario);
                     
-                    fun.set
+                    
 }
                 public void controSalario(Funcionario f){
                      // f.getSalario();
