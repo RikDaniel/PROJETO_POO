@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Mayana
@@ -16,6 +14,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);//Deixar a tela abrindo no CENTRO
+        setResizable(false);
     }
 
     /**
@@ -118,15 +118,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonFuncionario(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionario
-        // TODO add your handling code here:
+        Funcionario fc = new Funcionario ();
+        fc.setVisible(true);
     }//GEN-LAST:event_jButtonFuncionario
 
     private void jButtonCliente(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCliente
-        // TODO add your handling code here:
+        Cliente cli = new Cliente();
+        cli.setVisible(true);
     }//GEN-LAST:event_jButtonCliente
 
     private void jButtonAnimal(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnimal
-        // TODO add your handling code here:
+        Animal ani = new Animal();
+        ani.setVisible(true);
     }//GEN-LAST:event_jButtonAnimal
 
     private void jButtonServiço(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiço

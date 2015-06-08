@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Funcionario;
 import model.dao.DaoFuncionario;
+import model.Endereco;
+import model.Pessoa;
 
 /**
  *
@@ -80,6 +82,8 @@ public class ControllerFuncionario {
                     
                     DaoFuncionario fun = new DaoFuncionario();
                     fun.cadastroDeFuncionario(funcionario);
+                    
+                    fun.set
 }
                 public void controSalario(Funcionario f){
                      // f.getSalario();
